@@ -1,30 +1,36 @@
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href').substring(1);
-        document.getElementById(targetId).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
-
-// Dynamic greeting based on time of day
-function setGreeting() {
-    const greetingElement = document.getElementById("greeting");
-    const hour = new Date().getHours();
-    let greetingText = "Welcome!";
-
-    if (hour < 12) {
-        greetingText = "Good Morning! ☀️";
-    } else if (hour < 18) {
-        greetingText = "Good Afternoon! 🌤️";
-    } else {
-        greetingText = "Good Evening! 🌙";
-    }
-
-    greetingElement.textContent = greetingText;
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
 }
 
-// Run greeting function on page load
-document.addEventListener("DOMContentLoaded", setGreeting);
+header {
+    text-align: center;
+    padding: 20px;
+    background: #0073e6;
+    color: white;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+section {
+    padding: 20px;
+    margin: 20px;
+    background: white;
+    border-radius: 8px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.project {
+    background: #e6f7ff;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
