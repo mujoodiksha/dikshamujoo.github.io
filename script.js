@@ -1,36 +1,11 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-}
+document.addEventListener("DOMContentLoaded", function() {
+    const greetingElement = document.getElementById("greeting");
+    const hour = new Date().getHours();
+    
+    let greetingText = "Welcome!";
+    if (hour < 12) greetingText = "Good Morning! ☀️";
+    else if (hour < 18) greetingText = "Good Afternoon! 🌤️";
+    else greetingText = "Good Evening! 🌙";
 
-header {
-    text-align: center;
-    padding: 20px;
-    background: #0073e6;
-    color: white;
-}
-
-h1, h2 {
-    text-align: center;
-}
-
-section {
-    padding: 20px;
-    margin: 20px;
-    background: white;
-    border-radius: 8px;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.project {
-    background: #e6f7ff;
-    padding: 10px;
-    margin-top: 10px;
-    border-radius: 5px;
-}
+    greetingElement.textContent = greetingText;
+});
